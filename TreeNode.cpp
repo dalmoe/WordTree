@@ -2,10 +2,21 @@
 #include <string>
 #include <vector>
 
+TreeNode::TreeNode(){
+    m_word = "";
+    m_pParent = NULL;
+    m_pSibling = NULL;
+    m_pChild = NULL;
+}
 TreeNode::TreeNode(string word){
     m_word = word;
-    m_pParent = nullptr;
-    m_pSibling = nullptr;
+    m_pParent = NULL;
+    m_pSibling = NULL;
+    m_pChild = NULL;
+}
+
+void TreeNode::setWord(string word){
+    m_word = word;
 }
 
 string TreeNode::getWord(){
@@ -23,9 +34,9 @@ TreeNode* TreeNode::getSibling(){
 void TreeNode::setSibling(TreeNode* sibling){
     m_pSibling = sibling;
 }
-vector<TreeNode*> TreeNode::getChildren(){
-    return m_children;
+TreeNode* TreeNode::getChild(){
+    return m_pChild;
 }
-void TreeNode::setChildren(vector<TreeNode*> children){
-    m_children = children;
+void TreeNode::setChild(TreeNode* child){
+    m_pChild = child;
 }
